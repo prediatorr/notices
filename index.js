@@ -1,10 +1,10 @@
 require("dotenv").config();
-
 const express = require("express");
 const mongoose = require("mongoose");
-
 const app = express();
 const routes = require("./routes/index");
+
+app.use(express.json());
 app.use("/user", routes.userRouter);
 
 app.get("/", (req, res) => {
