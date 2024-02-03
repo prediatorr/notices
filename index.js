@@ -6,6 +6,7 @@ const routes = require("./routes/index");
 
 app.use(express.json());
 app.use("/user", routes.userRouter);
+app.use("/group", routes.groupRouter);
 
 app.get("/", (req, res) => {
   res.send("Hi babes");

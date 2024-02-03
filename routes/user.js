@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express.Router();
-const User = require("../models/user");
+const { User } = require("../models/index");
 const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
 
@@ -29,6 +29,7 @@ app.post(
           name: user.name,
           email: user.email,
           username: user.username,
+          id: user.id,
         },
         process.env.SECRET
       );
@@ -68,6 +69,7 @@ app.post(
         name: user.name,
         email: user.email,
         username: user.username,
+        id: user.id,
       },
       process.env.SECRET
     );
